@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
@@ -11,10 +11,10 @@ namespace Lab2
         {
             int answer = 0;
 
-            // code here
-
-            // end
-
+            for (int i = 0; i < n; i++)
+            {
+                answer += (p + h * i) * (p + h * i);
+            }
             return answer;
         }
         public (int quotient, int remainder)  Task2(int a, int b)
@@ -22,9 +22,12 @@ namespace Lab2
             int quotient = 0;
             int remainder = 0;
 
-            // code here
-
-            // end
+            while (a >= b)
+            {
+                a -= b;
+                quotient += 1;
+            }
+            remainder = a;
 
             return (quotient, remainder);
         }
@@ -32,40 +35,62 @@ namespace Lab2
         {
             double answer = 0;
 
-            // code here
-
-            // end
+            
 
             return answer;
         }
         public int Task4(double b, double q)
         {
             int answer = 0;
-
-            // code here
-
-            // end
+            double s = b;
+            answer += 1;
+            for (int i = 0;; i++)
+            {
+                if (Math.Abs(s) < E)
+                {
+                    break;
+                }
+                s *= q;
+                answer += 1; 
+            }
 
             return answer;
         }
         public int Task5(int a, int b)
         {
             int answer = 0;
-
-            // code here
-
-            // end
-
+            long number = a;
+            while (b > 0)
+            {
+                number *= b;
+                b--;
+            }
+            while (number >= 10)
+            {
+                number /= 10;
+                answer++;
+            }
+            
             return answer;
         }
         public long Task6()
         {
             long answer = 0;
+            long s = 0;
+            long p = 1;
+            long gram = 1;
+            for (int i = 1; i <= 64; i++)
+            {
+                s += p;
+                p *= 2;
+                if (s%15==0)
+                {
+                    gram += 1;
+                    s /= 15;
+                }
+            }
 
-            // code here
-
-            // end
-
+            answer = gram / 1000000;
             return answer;
         }
 
