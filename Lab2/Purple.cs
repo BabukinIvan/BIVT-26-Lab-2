@@ -35,8 +35,25 @@ namespace Lab2
         {
             double answer = 0;
 
-            
+            double n1 = 1, d1 = 1, n2 = 2, d2 = 1;
 
+            double a1 = n1 / d1;
+            double a2 = n2 / d2;
+            
+            while (Math.Abs(a2 - a1) >= E)
+            {
+                double n3 = n1 + n2;
+                double d3 = d1 + d2;
+                double a3 = n3 / d3;
+                n1 = n2;
+                d1 = d2; 
+                a1 = a2;
+                n2 = n3; 
+                d2 = d3;
+                a2 = a3;
+            }
+            
+            answer = a2;
             return answer;
         }
         public int Task4(double b, double q)
