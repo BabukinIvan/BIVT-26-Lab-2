@@ -93,9 +93,15 @@ namespace Lab2
         {
             int answer = 0;
 
-            // code here
-
-            // end
+            double c = 2 * S;
+            double start = S;
+            while (S < c)
+            {
+                S += ((start * d) / 100.0) / 12.0;
+                answer += 1;
+                if (answer % 12 == 0)
+                    start = S;
+            }
 
             return answer;
         }
