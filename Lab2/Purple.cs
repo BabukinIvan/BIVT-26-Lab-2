@@ -76,21 +76,16 @@ namespace Lab2
         public long Task6()
         {
             long answer = 0;
-            long s = 0;
-            long p = 1;
-            long gram = 1;
-            for (int i = 1; i <= 64; i++)
+            double a = 0;
+            double p = 1;
+            
+            for (int i = 0; i < 64; i++)
             {
-                s += p;
+                a += p;
                 p *= 2;
-                if (s%15==0)
-                {
-                    gram += 1;
-                    s /= 15;
-                }
             }
-
-            answer = gram / 1000000;
+            double grams = a / 15.0;
+            answer = (long)Math.Floor(grams / 1000000);
             return answer;
         }
 
