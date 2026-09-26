@@ -10,6 +10,7 @@ namespace Lab2
         public double Task1(int n)
         {
             double answer = 0;
+            // code here
 
             for (double i = 2; i <= n; i += 2)
             {
