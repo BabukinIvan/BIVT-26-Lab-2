@@ -78,7 +78,16 @@ namespace Lab2
             int answer = 0;
 
             // code here
-
+            int n = 2;
+            double p = 1 / x;
+            double c = p / x;
+            while (Math.Abs(c - p) >= E)
+            {
+                n++;
+                p = c;
+                c = p / x;
+            }
+            answer = n;
             // end
 
             return answer;
@@ -88,7 +97,13 @@ namespace Lab2
             int answer = 0;
 
             // code here
-
+            int elem = 1, i = 0;
+            while (elem < limit)
+            {
+                elem *= 2;
+                answer += elem;
+                i++;
+            }
             // end
 
             return answer;
@@ -99,7 +114,11 @@ namespace Lab2
             int answer = 0;
 
             // code here
-
+            while (L > Da)
+            {
+                L /= 2;
+                answer++;
+            }
             // end
 
             return answer;
