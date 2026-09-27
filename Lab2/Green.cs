@@ -129,7 +129,27 @@ namespace Lab2
             double SY = 0;
 
             // code here
-
+            int st = (int)((b - a) / h);
+            for (int k = 0; k <= st; k++)
+            {
+                double x = a + k * h;
+                double s = 0;
+                double p = x;
+                double g = 1;
+                int i = 0;
+                double t = g * p / (2 * i + 1);
+                while (Math.Abs(t) >= E / 100 && i < 10000)
+                {
+                    s += t;
+                    i++;
+                    g = -g;
+                    p *= x * x;
+                    t = g * p / (2 * i + 1);
+                }
+                double y = Math.Atan(x);
+                SS += s;
+                SY += y;
+            }
             // end
 
             return (SS, SY);
