@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
 namespace Lab2
 {
@@ -6,6 +7,7 @@ namespace Lab2
     {
         const double E = 0.0001;
         const double Da = 0.0000000001;
+
         public double Task1(int n)
         {
             double answer = 0;
@@ -19,6 +21,7 @@ namespace Lab2
 
             return answer;
         }
+
         public double Task2(int n, double x)
         {
             double answer = 0;
@@ -35,6 +38,7 @@ namespace Lab2
 
             return answer;
         }
+
         public long Task3(int n)
         {
             long answer = 0;
@@ -46,10 +50,11 @@ namespace Lab2
                 answer += f;
                 f *= (i + 1);
             }
-                // end
+            // end
 
             return answer;
         }
+
         public double Task4(double x)
         {
             double answer = 0;
@@ -69,6 +74,7 @@ namespace Lab2
 
             return answer;
         }
+
         public int Task5(double x)
         {
             int answer = 0;
@@ -88,6 +94,7 @@ namespace Lab2
 
             return answer;
         }
+
         public int Task6(int limit)
         {
             int answer = 0;
@@ -123,6 +130,7 @@ namespace Lab2
 
             return answer;
         }
+
         public (double SS, double SY) Task8(double a, double b, double h)
         {
             double SS = 0;
@@ -157,5 +165,4 @@ namespace Lab2
             return (SS, SY);
         }
     }
-}
 }
