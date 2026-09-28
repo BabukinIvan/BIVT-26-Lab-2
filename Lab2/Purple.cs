@@ -12,6 +12,11 @@ namespace Lab2
             int answer = 0;
 
             // code here
+            int s = p*p;
+            for (int I=1;I<n;I++)
+                s += (p+I*h)*(p+I*h);
+                
+            answer = s;
 
             // end
 
@@ -23,6 +28,13 @@ namespace Lab2
             int remainder = 0;
 
             // code here
+            remainder = a;
+
+            while (remainder >= b)
+            {
+                remainder = remainder - b;
+                quotient++;
+            }
 
             // end
 
@@ -33,6 +45,22 @@ namespace Lab2
             double answer = 0;
 
             // code here
+            double a = 1;
+            double b = 2;
+            double c = 1;
+            double d = 2;
+
+            while (Math.Abs(d - c) >= E)
+            {
+                double x = a + b;
+
+                a = b;
+                b = x;
+                c = d;
+                d = b / a;
+            }
+
+            answer = d;
 
             // end
 
@@ -43,6 +71,14 @@ namespace Lab2
             int answer = 0;
 
             // code here
+            double x = b;
+            answer = 1;
+
+            while (Math.Abs(x) >= E)
+            {
+                 x = x * q;
+                 answer++;
+            }
 
             // end
 
@@ -53,6 +89,19 @@ namespace Lab2
             int answer = 0;
 
             // code here
+            int n = a;
+
+            while (b > 0)
+            {
+                n = n * b;
+                b--;
+            }
+
+            while (n >= 10)
+            {
+                n = n / 10;
+                answer++;
+            }
 
             // end
 
@@ -63,6 +112,16 @@ namespace Lab2
             long answer = 0;
 
             // code here
+            decimal x = 1;
+            decimal s = 0;
+
+            for (int i = 1; i <= 64; i++)
+            {
+                s = s + x;
+                x = x * 2;
+            }
+
+            answer = (long)(s / 15 / 1000000);
 
             // end
 
@@ -74,6 +133,26 @@ namespace Lab2
             int answer = 0;
 
             // code here
+            double S1 = S;
+            double n = 0;
+            int o = 0;
+            int y = 0;
+
+            while (n < S1)
+            {
+                 n += S * (d / 100) / 12;
+                 o++;
+
+                 if (o == 12)
+                 {
+                     y += 12;
+                     o = 0;
+                     S = S * (1 + d / 100);
+                }
+            }
+
+            y += o;
+            answer = y;
 
             // end
 
@@ -85,6 +164,27 @@ namespace Lab2
             double SY = 0;
 
             // code here
+            for (double x = a; x <= b + E; x += h)
+            {
+                double s = 0;
+                double t = 1;
+                int i = 0;
+
+                while (true)
+                {
+                    s += t;
+
+                    if (Math.Abs(t) < E)
+                        break;
+
+                    i++;
+
+                    t = t * (-x * x) / ((2 * i - 1) * (2 * i));
+                }
+
+                SS += s;
+                SY += Math.Cos(x);
+            }
 
             // end
 
