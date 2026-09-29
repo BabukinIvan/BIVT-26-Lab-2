@@ -10,10 +10,12 @@ namespace Lab2
         public double Task1(int n, double x)
         {
             double answer = 0;
+            double power = 1;
             // code here
             for (int k = 1; k <= n; k++)
             {
-                answer += Math.Sin(k * x) / Math.Pow(x, k - 1);
+                answer += Math.Sin(k * x) / power;
+                power *= x;
             }
             // end
             return answer;
