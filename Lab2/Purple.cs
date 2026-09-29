@@ -17,7 +17,7 @@ namespace Lab2
             }
             return answer;
         }
-        public (int quotient, int remainder)  Task2(int a, int b)
+        public (int quotient, int remainder) Task2(int a, int b)
         {
             int quotient = 0;
             int remainder = 0;
@@ -39,20 +39,20 @@ namespace Lab2
 
             double a1 = n1 / d1;
             double a2 = n2 / d2;
-            
+
             while (Math.Abs(a2 - a1) >= E)
             {
                 double n3 = n1 + n2;
                 double d3 = d1 + d2;
                 double a3 = n3 / d3;
                 n1 = n2;
-                d1 = d2; 
+                d1 = d2;
                 a1 = a2;
-                n2 = n3; 
+                n2 = n3;
                 d2 = d3;
                 a2 = a3;
             }
-            
+
             answer = a2;
             return answer;
         }
@@ -61,14 +61,14 @@ namespace Lab2
             int answer = 0;
             double s = b;
             answer += 1;
-            for (int i = 0;; i++)
+            for (int i = 0; ; i++)
             {
                 if (Math.Abs(s) < E)
                 {
                     break;
                 }
                 s *= q;
-                answer += 1; 
+                answer += 1;
             }
 
             return answer;
@@ -87,7 +87,7 @@ namespace Lab2
                 number /= 10;
                 answer++;
             }
-            
+
             return answer;
         }
         public long Task6()
@@ -95,7 +95,7 @@ namespace Lab2
             long answer = 0;
             double a = 0;
             double p = 1;
-            
+
             for (int i = 0; i < 64; i++)
             {
                 a += p;
@@ -127,9 +127,22 @@ namespace Lab2
             double SS = 0;
             double SY = 0;
 
-            // code here
+            for (double x = a; x <= b + 0.0001; x += h)
+            {
+                double r = 1.0;
+                double s = 0;
+                int i = 0;
+                do
+                {
+                    s += r;
+                    i++;
+                    r = r * (-1) * x * x / ((2 * i - 1) * (2 * i));
+                } 
+                while (Math.Abs(r) > E);
 
-            // end
+                SS += s;
+                SY += Math.Cos(x);
+            }
 
             return (SS, SY);
         }
