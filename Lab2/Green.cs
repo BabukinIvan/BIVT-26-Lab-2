@@ -66,11 +66,9 @@ namespace Lab2
                 power *= x;
                 term = Math.Sin(n * power);
             }
+            // end
     
-    
-                // end
-    
-                return answer;
+            return answer;
         }
         public int Task5(double x)
         {
@@ -148,9 +146,9 @@ namespace Lab2
                 SS += S;
                 SY += Math.Atan(x);
             }
-                // end
+            // end
     
-                return (SS, SY);
+            return (SS, SY);
         }
     }
 }
