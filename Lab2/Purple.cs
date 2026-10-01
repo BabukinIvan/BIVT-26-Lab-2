@@ -43,6 +43,31 @@ namespace Lab2
         public double Task3()
         {
             double answer = 0;
+            double zn1 = 1;
+            double zn2 = 1;
+            double ch1 = 1;
+            double ch2 = 2;
+
+            for (int i = 0; i < 100000; i++)
+            {
+                double res1 = ch1 / zn1;
+                double res2 = ch2 / zn2;
+
+                if (Math.Abs(res2 - res1) < E)
+                {
+                    answer = res2;
+                    break;
+                }
+
+                double nextch = ch1 + ch2;
+                double nextzn = zn1 + zn2;
+
+                ch1 = ch2;
+                ch2 = nextch;
+                zn1 = zn2;
+                zn2 = nextzn;
+            }
+            
             
 
             return answer;
@@ -134,9 +159,24 @@ namespace Lab2
             double SS = 0;
             double SY = 0;
 
-            // code here
+            for (double x = a; x <= b + 0.0001; x += h)
+            {
+                double sum = 0;
+                double term = 1;
+                double i = 0;
 
-            // end
+                while (Math.Abs(term) > E)
+                {
+                    sum += term;
+                    i++;
+
+                    term = term * (-x * x) / ((2 * i - 1) * (2 * i));
+                }
+
+                SS += sum;
+                SY += Math.Cos(x);
+            }
+            
 
             return (SS, SY);
         }

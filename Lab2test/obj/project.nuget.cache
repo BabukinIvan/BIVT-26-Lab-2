@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AKW4K8GGbq0=",
+  "dgSpecHash": "8AXLes2Vt8g=",
   "success": true,
-  "projectFilePath": "/Users/data/RiderProjects/BIVT-26-Lab-2/Lab2test/Lab2test.csproj",
+  "projectFilePath": "/Users/data/RiderProjects/BIVT-26-Lab-22/Lab2test/Lab2test.csproj",
   "expectedPackageFiles": [
     "/Users/data/.nuget/packages/microsoft.applicationinsights/2.22.0/microsoft.applicationinsights.2.22.0.nupkg.sha512",
     "/Users/data/.nuget/packages/microsoft.codecoverage/17.11.1/microsoft.codecoverage.17.11.1.nupkg.sha512",

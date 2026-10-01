@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X69lyxU+TtY=",
+  "dgSpecHash": "yzWITL1cu20=",
   "success": true,
-  "projectFilePath": "/Users/data/RiderProjects/BIVT-26-Lab-2/Lab2/Lab2.csproj",
+  "projectFilePath": "/Users/data/RiderProjects/BIVT-26-Lab-22/Lab2/Lab2.csproj",
   "expectedPackageFiles": [
     "/Users/data/.nuget/packages/microsoft.netcore.app.ref/8.0.30/microsoft.netcore.app.ref.8.0.30.nupkg.sha512",
     "/Users/data/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.30/microsoft.aspnetcore.app.ref.8.0.30.nupkg.sha512",

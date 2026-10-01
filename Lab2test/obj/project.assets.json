@@ -2558,11 +2558,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/data/RiderProjects/BIVT-26-Lab-2/Lab2test/Lab2test.csproj",
+      "projectUniqueName": "/Users/data/RiderProjects/BIVT-26-Lab-22/Lab2test/Lab2test.csproj",
       "projectName": "Lab2test",
-      "projectPath": "/Users/data/RiderProjects/BIVT-26-Lab-2/Lab2test/Lab2test.csproj",
+      "projectPath": "/Users/data/RiderProjects/BIVT-26-Lab-22/Lab2test/Lab2test.csproj",
       "packagesPath": "/Users/data/.nuget/packages/",
-      "outputPath": "/Users/data/RiderProjects/BIVT-26-Lab-2/Lab2test/obj/",
+      "outputPath": "/Users/data/RiderProjects/BIVT-26-Lab-22/Lab2test/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/data/.nuget/NuGet/NuGet.Config"
@@ -2578,8 +2578,8 @@
           "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/data/RiderProjects/BIVT-26-Lab-2/Lab2/Lab2.csproj": {
-              "projectPath": "/Users/data/RiderProjects/BIVT-26-Lab-2/Lab2/Lab2.csproj"
+            "/Users/data/RiderProjects/BIVT-26-Lab-22/Lab2/Lab2.csproj": {
+              "projectPath": "/Users/data/RiderProjects/BIVT-26-Lab-22/Lab2/Lab2.csproj"
             }
           }
         }
