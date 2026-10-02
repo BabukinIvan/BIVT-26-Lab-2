@@ -7,9 +7,7 @@
         {
             int answer = 0;
 
-            // code here
-
-            // end
+            answer = (n * (2 + 3 * n - 1)) / 2;
 
             return answer;
         }
