@@ -140,5 +140,3 @@ namespace Lab2
         }
     }
 }
-    }
-}
