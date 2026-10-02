@@ -25,9 +25,11 @@ namespace Lab2
             double answer = 0;
 
             double s = 1.0;
+            double pow = 1.0;
             for (int i = 1; i <= n; i++)
             {
-                s += Math.Pow(x, -i);
+                pow /= x;
+                s += pow;
             }
 
             return s;
@@ -59,7 +61,12 @@ namespace Lab2
 
             while (true)
             {
-                double term = Math.Sin(n * Math.Pow(x, n));
+
+                double xn = 1.0;
+                for (int i = 0; i < n; i++)
+                    xn *= x;
+
+                double term = Math.Sin(n * xn);
                 if (Math.Abs(term) < epsilon) break;
 
                 s += term;
@@ -69,22 +76,26 @@ namespace Lab2
             return s;
         }
 
+
+
         public int Task5(double x)
         {
             double epsilon = 1e-4;
             int n = 1;
 
+            double previous = 1.0;
+            double current = 1.0 / x;
+
             while (true)
             {
-                double current = 1.0 / Math.Pow(x, n);
-                double previous = 1.0 / Math.Pow(x, n - 1);
-
                 if (Math.Abs(current - previous) < epsilon)
                 {
                     return n;
                 }
 
                 n++;
+                previous = current;
+                current /= x;
             }
         }
 
@@ -119,30 +130,35 @@ namespace Lab2
 
         public (double SS, double SY) Task8(double a, double b, double h)
         {
-            double SS = 0; 
-            double SY = 0; 
+            double SS = 0;
+            double SY = 0;
             double epsilon = 0.0001;
 
-            
             for (double x = a; x <= b + h / 1000; x += h)
             {
-                double currentSum = 0; 
+                double currentSum = 0;
                 double term;
                 int i = 0;
 
                 
+                double xPow = x; 
+                double sign = 1; 
+
                 do
                 {
-                    
-                    term = Math.Pow(-1, i) * Math.Pow(x, 2 * i + 1) / (2 * i + 1);
-            
+                    term = sign * xPow / (2 * i + 1);
+
                     currentSum += term;
                     i++;
 
-                } while (Math.Abs(term) >= epsilon); 
-                
+                    
+                    xPow *= x * x;
+                    sign = -sign;
+
+                } while (Math.Abs(term) >= epsilon);
+
                 double currentY = Math.Atan(x);
-                
+
                 SS += currentSum;
                 SY += currentY;
             }
