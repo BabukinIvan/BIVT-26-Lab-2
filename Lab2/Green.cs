@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Lab2
 {
@@ -6,85 +6,162 @@ namespace Lab2
     {
         const double E = 0.0001;
         const double Da = 0.0000000001;
+
         public double Task1(int n)
         {
             double answer = 0;
+            for (int i = 2; i <= n + 1; i += 2)
+            {
+                answer = answer + (double)i / (i + 1);
 
-            // code here
+            }
 
-            // end
 
             return answer;
         }
+
         public double Task2(int n, double x)
         {
             double answer = 0;
 
-            // code here
+            double s = 1.0;
+            double pow = 1.0;
+            for (int i = 1; i <= n; i++)
+            {
+                pow /= x;
+                s += pow;
+            }
 
-            // end
-
-            return answer;
+            return s;
         }
+
+
         public long Task3(int n)
         {
             long answer = 0;
+            long fact = 1;
+            for (int i = 0; i <= n; i++)
+            {
+                if (i > 0)
+                {
+                    fact *= i;
+                }
 
-            // code here
-
-            // end
+                answer += fact;
+            }
 
             return answer;
         }
+
         public double Task4(double x)
         {
-            double answer = 0;
+            double s = 0;
+            double epsilon = 1e-4;
+            int n = 1;
 
-            // code here
+            while (true)
+            {
 
-            // end
+                double xn = 1.0;
+                for (int i = 0; i < n; i++)
+                    xn *= x;
 
-            return answer;
+                double term = Math.Sin(n * xn);
+                if (Math.Abs(term) < epsilon) break;
+
+                s += term;
+                n++;
+            }
+
+            return s;
         }
+
+
+
         public int Task5(double x)
         {
-            int answer = 0;
+            double epsilon = 1e-4;
+            int n = 1;
 
-            // code here
+            double previous = 1.0;
+            double current = 1.0 / x;
 
-            // end
+            while (true)
+            {
+                if (Math.Abs(current - previous) < epsilon)
+                {
+                    return n;
+                }
 
-            return answer;
+                n++;
+                previous = current;
+                current /= x;
+            }
         }
+
         public int Task6(int limit)
         {
             int answer = 0;
+            int elem = 1;
+            int i = 0;
 
-            // code here
-
-            // end
+            while (elem < limit)
+            {
+                elem *= 2;
+                answer += elem;
+                i++;
+            }
 
             return answer;
         }
 
         public int Task7(double L)
         {
-            int answer = 0;
+            int count = 0;
+            double D = 1e-10;
+            while (L > D)
+            {
+                L /= 2.0;
+                count++;
+            }
 
-            // code here
-
-            // end
-
-            return answer;
+            return count;
         }
+
         public (double SS, double SY) Task8(double a, double b, double h)
         {
             double SS = 0;
             double SY = 0;
+            double epsilon = 0.0001;
 
-            // code here
+            for (double x = a; x <= b + h / 1000; x += h)
+            {
+                double currentSum = 0;
+                double term;
+                int i = 0;
 
-            // end
+                
+                double xPow = x; 
+                double sign = 1; 
+
+                do
+                {
+                    term = sign * xPow / (2 * i + 1);
+
+                    currentSum += term;
+                    i++;
+
+                    
+                    xPow *= x * x;
+                    sign = -sign;
+
+                } while (Math.Abs(term) >= epsilon);
+
+                double currentY = Math.Atan(x);
+
+                SS += currentSum;
+                SY += currentY;
+            }
 
             return (SS, SY);
         }
