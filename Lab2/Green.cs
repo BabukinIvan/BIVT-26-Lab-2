@@ -12,6 +12,11 @@ namespace Lab2
 
             // code here
 
+            for (int i = 2; i <= n; i += 2)
+            {
+                answer += (double)i / (i + 1);
+            }
+
             // end
 
             return answer;
@@ -21,6 +26,14 @@ namespace Lab2
             double answer = 0;
 
             // code here
+
+            double term = 1;
+            answer = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                term /= x;
+                answer += term;
+            }
 
             // end
 
@@ -32,6 +45,14 @@ namespace Lab2
 
             // code here
 
+            long fact = 1;
+            answer = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                fact *= i;
+                answer += fact;
+            }
+
             // end
 
             return answer;
@@ -41,6 +62,17 @@ namespace Lab2
             double answer = 0;
 
             // code here
+
+            double power = 1;
+            int i = 1;
+            while (true)
+            {
+                power *= x;
+                double term = Math.Sin(i * power);
+                if (Math.Abs(term) < E) break;
+                answer += term;
+                i++;
+            }
 
             // end
 
@@ -52,6 +84,16 @@ namespace Lab2
 
             // code here
 
+            double pr = 1;
+            double cu = 1 / x;
+            answer = 1;
+            while (Math.Abs(cu - pr) >= E)
+            {
+                pr = cu;
+                cu /= x;
+                answer++;
+            }
+
             // end
 
             return answer;
@@ -61,6 +103,14 @@ namespace Lab2
             int answer = 0;
 
             // code here
+
+            int elem = 1, i = 0;
+            while (elem < limit)
+            {
+                elem *= 2;
+                answer += elem;
+                i++;
+            }
 
             // end
 
@@ -73,6 +123,12 @@ namespace Lab2
 
             // code here
 
+            while (L > Da)
+            {
+                L /= 2;
+                answer++;
+            }
+
             // end
 
             return answer;
@@ -83,6 +139,25 @@ namespace Lab2
             double SY = 0;
 
             // code here
+
+            int steps = (int)((b - a) / h + E);
+            for (int k = 0; k <= steps; k++)
+            {
+                double x = a + k * h;
+                double power = x;
+                int sign = 1;
+                int i = 0;
+                double term;
+                do
+                {
+                    term = sign * power / (2 * i + 1);
+                    SS += term;
+                    power *= x * x;
+                    sign = -sign;
+                    i++;
+                } while (Math.Abs(term) >= E);
+                SY += Math.Atan(x);
+            }
 
             // end
 
